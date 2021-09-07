@@ -205,17 +205,17 @@ a:hover {
 }
 
 .main-body {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   padding-top: 20px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .panel-body {
   background-color: rgb(24, 24, 24);
   border: 2px solid rgb(123, 196, 192);
   border-radius: 10px;
-  padding: 40px;
+  padding: 20px;
 }
 
 td {
@@ -242,7 +242,7 @@ td:last-child {
 
 h1 {
   text-align: center;
-  font-size: 64px;
+  font-size: 48px;
   font-weight: normal;
   font-family: 'Raleway', sans-serif;
   padding-bottom: 20px;
