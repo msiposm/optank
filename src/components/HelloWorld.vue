@@ -386,5 +386,4 @@ hr {
   border: 1px solid white;
   margin-top:20px;
 }
-
 </style>
