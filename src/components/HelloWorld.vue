@@ -48,16 +48,16 @@
         <div class="panel-body">
           <p style="color:white;">👋 Hello, there! I’m Michael Sipos</p>
           <p>- 👀 I’m interested in ...</p>
-          <p class="project-item"> Linux, full-stack development, creating elegant and responsive 🏃 software solutions, and <em>constantly</em> learning</p>
+          <p class="project-item"> Linux, full-stack development, creating elegant and responsive software solutions, and <em>constantly</em> learning</p>
           <p>- 🌱 I’m currently learning ... </p>
           <p class="project-item"> Num.py and Sci.py for evaluation of engineering/applied mathematical problems and large-scale data analysis</p>
           <p>- 💞️ I’m looking to collaborate on ... </p>
           <p class="project-item">Minimalist open-source applications with a lean footprint</p>
           <p>- 🌲 Outside of tech, I like to ... </p>
-          <p class="project-item">🎼 Listen to music! Bach is my #1, but I play guitar in a band 🎸, solo classical guitar, and try my hand(s) at piano 🎹 and violin 🎻</p>
-          <p class="project-item">❄️ Freeze! I like the cold, and enjoy the winters skiing ⛷️, backpacking 🥾, XC skiing 🎿, and ice skating ⛸️</p>
-          <p class="project-item">☀️ When it gets warmer, I like adventures 🏔️, biking 🚴‍♂️, kayaking 🛶, and stargazing 🔭🌠
-          <p class="project-item">I'm a cinephile 🎬, avid reader 📚, and photography enthusiast 📷</p>
+          <p class="project-item">🎼 Listen to music (Bach is my #1)! I play guitar in a band, solo classical guitar, and try my hand(s) at piano and violin</p>
+          <p class="project-item">❄️ Freeze! I like the cold, and enjoy the winters skiing, backpacking, XC skiing, and ice skating</p>
+          <p class="project-item">☀️ When it gets warmer, I like biking, kayaking, and stargazing</p>
+          <p class="project-item">📷 I'm a cinephile, avid reader, and photography enthusiast</p>
           <p>- 📫 How to reach me ... </p>
           <p class="project-item">
             <a href="#">
