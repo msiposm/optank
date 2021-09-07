@@ -1,6 +1,7 @@
 <template>
   <div class="main">
 
+    <!------------- NAVBAR/HEADER MENU ------------->
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark navbar-custom">
       <div class="container-fluid">
         <a class="navbar-brand" v-on:click="section = 'main'">~/Michael_Sipos</a>
@@ -22,9 +23,9 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:black">
                 <li><a class="dropdown-item" v-on:click="section = 'website'">Website</a></li>
-                <li><a class="dropdown-item" v-on:click="section = 'projects'">Project 2</a></li>
+                <li><a class="dropdown-item" v-on:click="section = 'linuxProjects'">Linux Projects</a></li>
                 <!--<li><hr class="dropdown-divider"></li>-->
-                <li><a class="dropdown-item" v-on:click="section = 'projects'">Project 3</a></li>
+                <li><a class="dropdown-item" v-on:click="section = 'projects'">Projects</a></li>
               </ul>
             </li>
             <!--
@@ -40,27 +41,50 @@
       </div>
     </nav>
 
+    <!------------- MAIN/ABOUT ME PAGE ------------->
     <div class="main-body">
       <div v-if="section == 'main' || section == 'about-me'" class="page-section">
         <h1>About Me</h1>
         <div class="panel-body">
-          <p>My name is Michael</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida rutrum quisque non tellus orci ac auctor. Enim diam vulputate ut pharetra sit amet aliquam id. Volutpat lacus laoreet non curabitur gravida arcu ac tortor dignissim. Convallis posuere morbi leo urna molestie at elementum eu. Amet purus gravida quis blandit turpis cursus in hac. Pellentesque elit eget gravida cum sociis natoque. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Est sit amet facilisis magna etiam tempor orci. Nunc consequat interdum varius sit amet mattis. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Sit amet est placerat in egestas erat imperdiet sed. Pretium nibh ipsum consequat nisl vel pretium. Ac turpis egestas sed tempus urna et pharetra pharetra. Consequat mauris nunc congue nisi vitae.</p>
+          <p style="color:white;">👋 Hello, there! I’m Michael Sipos</p>
+          <p>- 👀 I’m interested in ...</p>
+          <p class="project-item"> Linux, full-stack development, creating elegant and responsive 🏃 software solutions, and <em>constantly</em> learning</p>
+          <p>- 🌱 I’m currently learning ... </p>
+          <p class="project-item"> Num.py and Sci.py for evaluation of engineering/applied mathematical problems and large-scale data analysis</p>
+          <p>- 💞️ I’m looking to collaborate on ... </p>
+          <p class="project-item">Minimalist open-source applications with a lean footprint</p>
+          <p>- 🌲 Outside of tech, I like to ... </p>
+          <p class="project-item">🎼 Listen to music! Bach is my #1, but I play guitar in a band 🎸, solo classical guitar, and try my hand(s) at piano 🎹 and violin 🎻</p>
+          <p class="project-item">❄️ Freeze! I like the cold, and enjoy the winters skiing ⛷️, backpacking 🥾, XC skiing 🎿, and ice skating ⛸️</p>
+          <p class="project-item">☀️ When it gets warmer, I like adventures 🏔️, biking 🚴‍♂️, kayaking 🛶, and stargazing 🔭🌠
+          <p class="project-item">I'm a cinephile 🎬, avid reader 📚, and photography enthusiast 📷</p>
+          <p>- 📫 How to reach me ... </p>
+          <p class="project-item">
+            <a href="#">
+              <img src="../assets/github.png"> Github
+            </a>
+            <a href="https://www.linkedin.com/in/siposm">
+              <img src="../assets/linkedin.png"> LinkedIn
+            </a>
+          </p>
         </div>
       </div>
 
+      <!------------- EXPERIENCE PAGE ------------->
       <div v-if="section == 'experience'" class="page-section">
         <h1>Experience</h1>
         <div class="panel-body">
-          <p>This section is currently under work. Please visit again soon!</p>
+          <p>This section is currently under development. Please visit again soon!</p>
         </div>
       </div>
 
+      <!------------- WEBSITE PAGE ------------->
       <div v-if="section == 'website'" class="page-section">
         <h1>Website</h1>
         <div class="panel-body">
-          <p>What you're looking at now!</p>
-          <p>This website was hand-developed with custom HTML/CSS/JS built on a MEVN full-stack web development framework</p>
+          <p style="font-weight: bold;">What you're looking at right now!</p>
+          <p>This website was custom-developed in HTML/CSS/JS using a MEVN full-stack web development framework.</p>
+          <!------ TABLE 1 ------>
           <table style="margin-bottom:20px; margin-left:20px; font-family:'Inconsolata',monospace;">
             <tr>
               <td>MongoDB</td>
@@ -79,8 +103,9 @@
               <td>JavaScript runtime environment</td>
             </tr>
           </table>
-          <p>Hosting is provided via Amazon Web Services (AWS) with website code residing on GitHub. A Test / Build / Deploy process is implemented via cloud CI/CD technologies on AWS. With a simple GitHub push, the pipeline is automatically triggered!</p>
+          <p>Hosting is provided through Amazon Web Services (AWS) using GitHub as code repository. A Build / Test / Deploy process is implemented through AWS cloud CI/CD tools. With a simple GitHub push, the pipeline is automatically triggered!</p>
           <p>Additional libraries and tools used:</p>
+          <!------ TABLE 2 ------>
           <table style="margin-bottom:20px; margin-left:20px; font-family:'Inconsolata',monospace;">
             <tr>
               <td>Babel</td>
@@ -114,16 +139,113 @@
         </div>
       </div>
 
+      <!------------- "LINUX PROJECTS" PAGE ------------->
+      <div v-if="section == 'linuxProjects'" class="page-section">
+        <h1>Linux Projects</h1>
+        <div class="panel-body">
+          <p class="project-header" style="font-weight: bold;">Project details coming soon!</p>
+          <div>
+            <p class="project-header">Project: Squid Proxy-Caching Server for Web Acceleration</p>
+            <ul>
+              <li class="project-item">Caching static content </li>
+              <li class="project-item">Authentication</li>
+              <li class="project-item">Logging and filtering</li>
+              <li class="project-item">Reverse proxy and load balancing</li>
+            </ul>
+            <p class="project-header">Project: OpenSSH, Stunnel, SOCKS Proxies</p>
+            <ul>
+              <li class="project-item">Setting up OpenSSH and hardening the out-of-box configurations</li>
+              <li class="project-item">Using OpenSSH for tunneling and configuring a SOCKS proxy</li>
+              <li class="project-item">Using Stunnel for tunneling and securing TCP protocols</li>
+              <li class="project-item">Remote desktop connection with VNC over encrypted channels</li>
+            </ul>
+            <p class="project-header">Project: Linux Firewall Configuration</p>
+            <ul>
+              <li class="project-item">Setting up a stateful firewall with linux kernel firewall iptables/netfilter</li>
+              <li class="project-item">Block unwanted requests with fail2ban and the iptables 'limit' module</li>
+              <li class="project-item">Setting up logging systems, sending encrypted emails from host with local mail server</li>
+            </ul>
+            <p class="project-header">Project: Creating a Custom BIND Server</p>
+            <ul>
+              <li class="project-item">Caching DNS server for personal network</li>
+              <li class="project-item">Combining BIND with Squid for web acceleration</li>
+            </ul>
+            <p class="project-header">Project: OpenVPN from Scratch</p>
+            <ul>
+              <li class="project-item">Setting up a personal Virtual Private Network (VPN) using the open-source OpenVPN system</li>
+              <li class="project-item">Using OpenVPN to securely host VPN-only services</li>
+              <li class="project-item">Connecting Windows, Linux, iOS, and Android devices to openVPN</li>
+            </ul>
+            <p class="project-header">Project: Encryption/Cryptography and Public-Key Infrastructure (PKI)</p>
+            <ul>
+              <li class="project-item">Linux encryption with gnupg, openssl, p7zip</li>
+              <li class="project-item">Self-signed S/MIME certificates for email signing/encryption</li>
+              <li class="project-item">Linux disk/volume encryption: LUKS/dm-crypt/cryptsetup</li>
+              <li class="project-item">FUSE, Virtual File Systems, chroot</li>
+            </ul>
+            <p class="project-header">Project: Linux Audio Systems and Hi-Fi Audio</p>
+            <ul>
+              <li class="project-item">ALSA, alsaconf, .asoundrc, PulseAudio configuration</li>
+              <li class="project-item">Low-latency audio with JACK and real-time kernels</li>
+              <li class="project-item">Music server with mpd, ncurses clients (ncmpc/ncmpcpp)</li>
+              <li class="project-item">Lossless CD ripping and conversion (RubyRipper, freedb/gnudb validation)</li>
+            </ul>
+            <p class="project-header">Project: Backup, Data Transfer, Secure Erasure</p>
+            <ul>
+              <li class="project-item">Using Rsync for local and remote manual/automated backups</li>
+              <li class="project-item">Using SFTP for encrypted file transfer</li>
+              <li class="project-item">Linux-based secure FTP with hardened FTPS and FTPES</li>
+              <li class="project-item">Barebones data transfer: learning to use 'dd'</li>
+              <li class="project-item">Blowing it up with Darik's Boot and Nuke (DBAN), and other data copying/partitioning live environments</li>
+            </ul>
+            <p class="project-header">Project: Network Analysis and Cybersecurity</p>
+            <ul>
+              <li class="project-item">Packet sniffing with tcpdump, wireshark; wireless chips with monitor/promiscuous mode</li>
+              <li class="project-item">Port scanning with nmap</li>
+              <li class="project-item">Open-source Intrusion Prevention System with snort</li>
+              <li class="project-item">Aircrack-ng wireless cracking suite (Aireplay,Airodump,Airbase)</li>
+              <li class="project-item">Slowloris attacks with SlowHTTPTest and PyLoris</li>
+              <li class="project-item">Penetration testing with BackTrack Linux (now Kali) and exploit suites (nikto, kismet, w3af, metasploit)</li>
+              <li class="project-item">Importance of strong passwords, good hash algorithms, and testing Ophcrack to crack Windows/NT passwords</li>
+              <li class="project-item">Secure live environment with Tails</li>
+              <li class="project-item">Open-source malware scanning with ClamAV</li>
+              <li class="project-item">Linux system monitoring tools: conky, vmstat, vnstat, iptraf, ntop, (h)top, lsof, ss, netstat, iftop, iotop, iostat</li>
+            </ul>
+            <p class="project-header">Linux OS Distribution Reviews</p>
+            <ul>
+              <li class="project-item">Building Linux from Scratch, with Linux From Scratch (LFS)</li>
+              <li class="project-item">Arch Linux and derivatives, the Arch Linux philosophy</li>
+              <li class="project-item">Gentoo</li>
+              <li class="project-item">Slackware</li>
+              <li class="project-item">Debian and derivatives</li>
+              <li class="project-item">RHEL and family (Fedora, Scientific OS, CentOS)</li>
+              <li class="project-item">OpenSUSE</li>
+              <li class="project-item">*BSD Operating Systems</li>
+              <li class="project-item">Specialty distributions, run-from-RAM, old PCs (DamnSmallLinux, Puppy, TinyCore, SliTaz)</li>
+            </ul>
+            <p class="project-header">Linux Desktop Environment and Window Manager Reviews</p>
+            <ul>
+              <li class="project-item">Gnome 2, Gnome 3</li>
+              <li class="project-item">KDE</li>
+              <li class="project-item">XFCE, LXDE, LXQt</li>
+              <li class="project-item">Tiling Window Managers: awesome, dwm, i3, spectrwm, xmonad, ratpoison</li>
+              <li class="project-item">Stacking Window Managers: openbox, fluxbox, icewm</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!----------- PROJECTS PAGE ------------>
       <div v-if="section == 'projects'" class="page-section">
         <h1>Projects</h1>
         <div class="panel-body">
-          <p>Additional projects coming soon!</p>
+          <p>This section is currently under development. Please visit again soon to see more projects!</p>
         </div>
       </div>
+
+      <!----------- FOOTER -------------->
       <hr />
-      <p class = "footer-text">
-        Copyright &#169; 2021 Michael Sipos. All Rights Reserved
-    </p>
+      <p class = "footer-text">Copyright &#169; 2021 Michael Sipos. All Rights Reserved</p>
     </div>
   </div>
 </template>
@@ -247,6 +369,12 @@ h1 {
   font-family: 'Raleway', sans-serif;
   padding-bottom: 20px;
   white-space: nowrap;
+}
+
+.project-item {
+  color: rgb(123, 196, 192);
+  font-family: "Inconsolata", monospace;
+  margin-left: 20px;
 }
 
 a {
