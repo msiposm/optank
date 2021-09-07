@@ -13,7 +13,8 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Open+Sans:ital,wght@0,400;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
 #app {
   /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
   font-family: 'Open Sans', sans-serif;
@@ -25,7 +26,7 @@ export default {
 }
 
 body {
-  background: rgb(24, 24, 24);
+  background: rgb(0, 0, 0);
   padding: 0px;
   margin: 0px;
 }
