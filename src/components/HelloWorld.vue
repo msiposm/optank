@@ -37,7 +37,7 @@
         <div class="panel-body">
           <p style="color:white;">👋 Hello, there! Welcome to the Commonwealth of AWSome</p>
           <form v-on:submit.prevent="submitForm">
-            <input type="text" v-model="email" placeholder="Enter email address: " />
+            <input type="text" v-model="form.email" placeholder="Enter email address: " />
             <input type="submit" value="Submit" />
             <!-- Input of any type and tectareas goes here -->
           </form>
@@ -82,22 +82,22 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      email: '',
+      form: {
+        email: ''
+      },
       section: 'main'
     }
   },
 
   methods: {
     async submitForm () {
-      const res = await fetch('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify({email: this.email})
-      })
+      axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.form);
     }
   }
 }
