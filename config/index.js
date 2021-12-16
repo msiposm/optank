@@ -15,6 +15,7 @@ module.exports = {
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    proxy: 'https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com',
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

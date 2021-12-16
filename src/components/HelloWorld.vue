@@ -50,11 +50,11 @@
           <form v-on:submit.prevent="subscribeForm">
             <div class='formField'>
               <p>Select a feed:</p>
-              <select name="feed" v-model="subscribe.feed">
+              <!-- <select name="feed" v-model="subscribe.feed">
                 <option value="feed_a">Feed A</option>
                 <option value="feed_b">Feed B</option>
                 <option value="feed_c">Feed C</option>
-              </select>
+              </select> -->
             </div>
             <div class='formField'>
               <p>Enter your email address:</p>
@@ -123,8 +123,8 @@ export default {
   data () {
     return {
       subscribe: {
-        email: '',
-        feed: ''
+        email: ''
+        // feed: ''
       },
       feed: {
         email: ''
@@ -139,20 +139,23 @@ export default {
 
   methods: {
     async subscribeForm () {
-      axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.subscribe,
+      axios.put('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.subscribe,
         {
           headers: {
-            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2'
+            'content-type': 'application/json',
+            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2',
+            'Access-Control-Allow-Origin': '*'
           }
-        }
-      )
+        }).then(response => { console.log(response) })
     },
 
     async feedForm () {
       axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.feed,
         {
           headers: {
-            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2'
+            'content-type': 'application/json',
+            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2',
+            'Access-Control-Allow-Origin': '*'
           }
         }
       )
@@ -162,12 +165,15 @@ export default {
       axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.story,
         {
           headers: {
-            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2'
+            'content-type': 'application/json',
+            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2',
+            'Access-Control-Allow-Origin': '*'
           }
         }
       )
     }
   }
+
 }
 </script>
 
