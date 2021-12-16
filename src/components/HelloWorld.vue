@@ -4,7 +4,7 @@
     <!------------- NAVBAR/HEADER MENU ------------->
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark navbar-custom">
       <div class="container-fluid">
-        <a class="navbar-brand" v-on:click="section = 'main'">AWSome Government</a>
+        <a class="navbar-brand" v-on:click="section = 'main'">Commonwealth of AWSome | Notification System</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,13 +16,13 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                AWSome Government Notifications
+                Actions
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:black">
                 <li><a class="dropdown-item" v-on:click="section = 'subscribe'">Subscribe</a></li>
                 <li><a class="dropdown-item" v-on:click="section = 'create_feed'">Create Feed</a></li>
                 <!--<li><hr class="dropdown-divider"></li>-->
-                <li><a class="dropdown-item" v-on:click="section = 'notification'">Submit Notification</a></li>
+                <li><a class="dropdown-item" v-on:click="section = 'notification'">Send Notification</a></li>
               </ul>
             </li>
           </ul>
@@ -36,11 +36,7 @@
         <h1>Home</h1>
         <div class="panel-body">
           <p style="color:white;">👋 Hello, there! Welcome to the Commonwealth of AWSome</p>
-          <form v-on:submit.prevent="submitForm">
-            <input type="text" v-model="form.email" placeholder="Enter email address: " />
-            <input type="submit" value="Submit" />
-            <!-- Input of any type and tectareas goes here -->
-          </form>
+
           <p class="project-item"></p>
           <p>- Example text</p>
         </div>
@@ -48,10 +44,26 @@
 
       <!------------- SUBSCRIBE PAGE ------------->
       <div v-if="section == 'subscribe'" class="page-section">
-        <h1>Subscribe</h1>
+        <h1>Subscribe to Notifications</h1>
         <div class="panel-body">
-          <p style="font-weight: bold;">What you're looking at right now!</p>
-          <p>To subscribe, please hit subscribe</p>
+          <p style="font-weight: bold;">To subscribe to a notification, please complete the following form: </p>
+          <form v-on:submit.prevent="subscribeForm">
+            <div class='formField'>
+              <p>Select a feed:</p>
+              <select name="feed" v-model="subscribe.feed">
+                <option value="feed_a">Feed A</option>
+                <option value="feed_b">Feed B</option>
+                <option value="feed_c">Feed C</option>
+              </select>
+            </div>
+            <div class='formField'>
+              <p>Enter your email address:</p>
+              <input type="text" v-model="subscribe.email" placeholder="example@address.com" />
+            </div>
+            <div class='formField'>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
         </div>
       </div>
 
@@ -59,18 +71,40 @@
       <div v-if="section == 'create_feed'" class="page-section">
         <h1>Create a New Feed</h1>
         <div class="panel-body">
-          <p class="project-header" style="font-weight: bold;">Project details coming soon!</p>
+          <p class="project-header" style="font-weight: bold;">To create a new feed, enter a title below and click 'Create'</p>
           <div>
-            <p class="project-header">hgfdh</p>
+            <form v-on:submit.prevent="feedForm">
+              <div class='formField'>
+              <input type="text" v-model="feed.email" placeholder="Title of Feed" />
+              </div>
+              <div class='formField'>
+                <input type="submit" value="Create" />
+                </div>
+            </form>
           </div>
         </div>
       </div>
 
-      <!----------- SUBMIT NOTIFICATION PAGE ------------>
+      <!----------- SUBMIT STORY PAGE ------------>
       <div v-if="section == 'notification'" class="page-section">
-        <h1>Projects</h1>
+        <h1>Submit a Story to a Feed</h1>
         <div class="panel-body">
-          <p>This section is currently under development. Please visit again soon to see more projects!</p>
+          <p>To submit a story to notification feed, please select a feed, enter the story details, and click "Submit"</p>
+          <form v-on:submit.prevent="storyForm">
+            <div class='formField'>
+            <select name="feed" v-model="story.feed">
+              <option value="feed_a">Feed A</option>
+              <option value="feed_b">Feed B</option>
+              <option value="feed_c">Feed C</option>
+            </select>
+            </div>
+            <div class='formField'>
+              <textarea v-model="story.description" placeholder="Notification details: " />
+            </div>
+            <div class='formField'>
+            <input type="submit" value="Send" />
+            </div>
+          </form>
         </div>
       </div>
 
@@ -88,16 +122,50 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      form: {
+      subscribe: {
+        email: '',
+        feed: ''
+      },
+      feed: {
         email: ''
+      },
+      story: {
+        description: '',
+        feed: ''
       },
       section: 'main'
     }
   },
 
   methods: {
-    async submitForm () {
-      axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.form);
+    async subscribeForm () {
+      axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.subscribe,
+        {
+          headers: {
+            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2'
+          }
+        }
+      )
+    },
+
+    async feedForm () {
+      axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.feed,
+        {
+          headers: {
+            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2'
+          }
+        }
+      )
+    },
+
+    async storyForm () {
+      axios.post('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', this.story,
+        {
+          headers: {
+            'authorizationToken': 'YNQXmb4oYv9rSboLGFVmC5b9zszBfZtg5wcFVoD2'
+          }
+        }
+      )
     }
   }
 }
@@ -105,6 +173,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.formField {
+  padding: 10px;
+}
 
 .header-menu {
   background: black;
