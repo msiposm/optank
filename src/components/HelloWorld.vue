@@ -93,7 +93,7 @@ export default {
 
   methods: {
     async submitForm () {
-      const res = await fetch('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/subscribe', {
+      const res = await fetch('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/dev/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         body: JSON.stringify({email: this.email})
