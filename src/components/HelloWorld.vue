@@ -30,12 +30,17 @@
       </div>
     </nav>
 
-    <!------------- MAIN/ABOUT ME PAGE ------------->
+    <!------------- HOME ------------->
     <div class="main-body">
       <div v-if="section == 'main' || section == 'about-me'" class="page-section">
-        <h1>About Me</h1>
+        <h1>Home</h1>
         <div class="panel-body">
           <p style="color:white;">👋 Hello, there! Welcome to the Commonwealth of AWSome</p>
+          <form v-on:submit.prevent="submitForm">
+            <input type="text" v-model="email" placeholder="Enter email address: " />
+            <input type="submit" value="Submit" />
+            <!-- Input of any type and tectareas goes here -->
+          </form>
           <p class="project-item"></p>
           <p>- Example text</p>
         </div>
@@ -43,7 +48,7 @@
 
       <!------------- SUBSCRIBE PAGE ------------->
       <div v-if="section == 'subscribe'" class="page-section">
-        <h1>Website</h1>
+        <h1>Subscribe</h1>
         <div class="panel-body">
           <p style="font-weight: bold;">What you're looking at right now!</p>
           <p>To subscribe, please hit subscribe</p>
@@ -81,7 +86,18 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      email: '',
       section: 'main'
+    }
+  },
+
+  methods: {
+    async submitForm () {
+      const res = await fetch('https://iz7o3yh3p8.execute-api.ca-central-1.amazonaws.com/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({email: this.email})
+      })
     }
   }
 }
